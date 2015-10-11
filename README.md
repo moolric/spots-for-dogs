@@ -4,6 +4,8 @@ It includes bootstrap sass files in the compiled css.
 
 It also uses a vagrant server and the hostname spots.local
 
+Has a companion api at https://github.com/moolric/spots-for-dogs
+
 You will need ruby, sass, grunt, vagrant and virtualbox installed before you start
 
 # steps to get it running
