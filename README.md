@@ -10,7 +10,6 @@ You will need ruby, sass, grunt, vagrant and virtualbox installed before you sta
 
 In the command line
 
-
 ```
 npm install
 ```
@@ -21,7 +20,6 @@ vagrant up
 vagrant hostmanager
 ```
  (you may have to edit your host file manually)
-```
 
 
 In your IDE
