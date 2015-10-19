@@ -1,0 +1,58 @@
+<div class="slide-out spot">
+    <div class="slide-out-inner">
+        <h1>
+            {{spot.name}}
+        </h1>
+
+        <div class="slide-out-content">
+            {{spot.photosphere}}
+            <div class="row">
+                <div class="col-sm-2 spot-details">
+                    <div class="contact">
+                        <h2>Location</h2>
+
+                        <div class="address" ng-bind-html="spot.address"></div>
+                        <div ng-if="spot.content" class="content">
+                            <h2>About the spot</h2>
+
+                            <div ng-bind-html="spot.content"></div>
+                        </div>
+                        <h2>Belongs to</h2>
+
+                        <div class="owner">
+                            <b><a ui-sref="owner({slug:spot.owner.slug})">{{spot.owner.name}}</a></b><br>
+                            <a href="{{spot.owner.url}}">Website</a><br>
+                            <a href="{{spot.owner.url_dog_page}}">Dog info page</a><br>
+                            <a href="{{spot.owner.email}}">Email address</a><br>
+                        </div>
+                    </div>
+                    <div class="tags" ng-if="spot.tags">
+                        <h2>Tags</h2>
+                        <ul>
+                            <li ng-repeat="tag in spot.tags"><a ui-sref="tag({slug:tag.slug})">{{tag.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-5 spots-images">
+                    <div class="photos">
+                        <div ng-repeat="photo in spot.photos">
+                            <img src="uploads/{{photo.filename}}" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 spots-map">
+                    <ui-gmap-google-map
+                            center="map.center"
+                            zoom="map.zoom"
+                            options="map.options">
+                        <ui-gmap-marker
+                                idKey="map.marker.id"
+                                coords="map.marker.coords"
+                                icon="map.marker.icon">
+                        </ui-gmap-marker>
+                    </ui-gmap-google-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

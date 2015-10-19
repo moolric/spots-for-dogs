@@ -1,0 +1,44 @@
+.spots {
+    background-color: #f2f2f2 !important;
+    .spot-list {
+        padding:0;
+        form {
+            padding: $grid-gutter-width/2 $grid-gutter-width/2 $grid-gutter-width/4 $grid-gutter-width/2;
+            .form-group {
+                margin-bottom: $grid-gutter-width/4;
+            }
+        }
+        .actual-spots {
+            overflow-y: scroll;
+            height:800px;
+            .row {
+                margin:0;
+
+            }
+            .box {
+                display:block;
+                border:3px solid #f2f2f2;
+                background-color:white;
+                color:$color-dark-brown;
+                transition:background-color 0.5s;
+                padding:0;
+                &:hover {
+                    text-decoration:none;
+                    background-color:$color-green;
+
+                }
+                h3 {
+                    margin-top:0;
+                }
+                .text {
+                    padding:10px;
+                }
+                .image {
+                    width:100%;
+                }
+            }
+
+        }
+
+    }
+}

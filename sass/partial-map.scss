@@ -1,0 +1,13 @@
+.spots-map {
+  padding: 0;
+
+  .angular-google-map-container {
+    height: 800px;
+    border-left: 1px solid darken($slide-out-bgcolor, 3%);
+  }
+  transition: all 2s;
+  opacity: 1;
+  &.nope {
+    opacity: 0;
+  }
+}

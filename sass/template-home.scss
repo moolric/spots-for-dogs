@@ -1,0 +1,45 @@
+.section-home {
+    .logo {
+        text-indent: -9999px;
+        overflow:hidden;
+        background:url($image-logo) no-repeat center center;
+        background-size:contain;
+        height:65px;
+        margin-top:30px;
+        transition:all 0.3s;
+    }
+
+    .links {
+        @extend .text-center;
+        position:fixed;
+        bottom:100px;
+        right:$grid-gutter-width;
+        left:$nav-width-closed + $grid-gutter-width;
+        > div {
+            padding:3px;
+            transition:all 0.3s;
+        }
+        a {
+            display:block;
+            height:100px;
+            font-size:18px;
+            background-color:$home-links-bgcolor;
+            padding:12px;
+            white-space: nowrap;
+            font-weight:bold;
+            transition:all 0.3s;
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                width:0;
+            }
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                white-space: normal;
+            }
+        }
+    }
+}

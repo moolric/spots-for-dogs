@@ -1,0 +1,97 @@
+.navbar-side {
+    border-radius: 0;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    margin:0;
+    background-color: $nav-color-dark;
+    color: $nav-color-light;
+    transition: all 0.3s ease-in;
+    width:$nav-width-closed;
+    overflow:hidden;
+    z-index:1000;
+    .icon-bar {
+        background-color: $nav-color-light;
+    }
+    .navbar-header {
+        width:100%;
+        padding:25px 0 20px;
+        cursor:pointer;
+        .navbar-header-inner {
+            width:$nav-width-closed;
+            float:right;
+            @extend .text-center;
+        }
+        .navbar-toggle {
+            float:none;
+            margin:0 auto;
+            display:block !important;
+            .icon-bar {
+                height:4px;
+                width:26px;
+                border-radius:2px;
+            }
+        }
+        .navbar-brand {
+            float:none;
+            display:block;
+            padding:0;
+            font-weight:600;
+            height:auto;
+        }
+    }
+    .navbar-side-menu {
+        width:$nav-width;
+        margin-left:$nav-width-closed;
+        transition:all 0.3s ease-in;
+        opacity:0;
+        ul {
+            padding: 0 15px;
+            width: 100%;
+            li {
+                float: none;
+                border-bottom: 1px solid lighten($nav-color-dark, 7%);
+                a {
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 20px 0;
+                    color: $nav-color-light;
+                    &:hover {
+                        background-color: $nav-color-dark;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .home & {
+        background-color: $nav-color-light;
+        color: $nav-color-dark;
+        .icon-bar {
+            background-color: $nav-color-dark;
+        }
+        .navbar-side-menu ul {
+            li {
+                border-bottom: 1px solid darken($nav-color-light, 7%);
+                a {
+                    color: $nav-color-dark;
+                    &:hover {
+                        background-color: $nav-color-light;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.open {
+        width:$nav-width;
+        .navbar-side-menu {
+            margin-left:0;
+            opacity:1;
+
+        }
+    }
+}

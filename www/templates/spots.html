@@ -1,0 +1,63 @@
+<div class="slide-out spots">
+    <div class="slide-out-inner">
+        <h1>
+            Spots for Dogs
+        </h1>
+
+        <div class="slide-out-content">
+            <div class="row">
+                <div class="col-sm-6 spot-list">
+                    <form role="form" class="row">
+                        <div class="form-group col-sm-4">
+                            <select name="owner" class="form-control"  ng-model="ownerFilter">
+                                <option value="">Filter by area</option>
+                                <option ng-repeat="owner in owners">{{owner.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <select name="category" class="form-control"  ng-model="categoryFilter">
+                                <option value="">Filter by category</option>
+                                <option ng-repeat="category in categories">{{category.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <select name="tag" class="form-control"  ng-model="tagFilter">
+                                <option value="">Filter by feature</option>
+                                <option ng-repeat="tag in tags">{{tag.name}}</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="actual-spots">
+                        <div class="row" masonry>
+                            <a class="col-sm-3 masonry-brick box" ng-repeat="spot in spots | filter:{owner:{name: ownerFilter}}" ng-class="spot.coords"
+                                  ui-sref="spot({spotID:spot.spot_id})">
+                                <div class="image"  ng-if="spot.feature"><img src="uploads/{{spot.feature.filename}}" class="img-responsive"></div>
+                                <div class="text">
+                                    <h3>{{spot.name}}</h3>
+                                    <p>{{spot.address}}</p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-sm-6 spots-map" ng-class="mapVisibility">
+                    <ui-gmap-google-map
+                            center="map.center"
+                            zoom="map.zoom"
+                            options="map.options">
+                        <ui-gmap-markers
+                                models="map.markers"
+                                coords="'self'"
+                                icon="'icon'"
+                                options="'options'"
+                                fit="true">
+
+                        </ui-gmap-markers>
+                    </ui-gmap-google-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

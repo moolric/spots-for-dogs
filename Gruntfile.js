@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files  : {
-                    "html/css/app.min.css": "sass/app.scss"
+                    "www/css/app.min.css": "sass/app.scss"
                 }
             }
         },
@@ -19,14 +19,20 @@ module.exports = function(grunt) {
                 files: ['sass/**/*.scss'],
                 tasks: ['sass:prod'],
                 options: {
-                    livereload: true,
+                    livereload: true
                 }
             },
             js: {
-                files: ['!html/js/scripts.js', 'html/js/app.js','html/js/*/*.*.js'],
+                files: ['!www/js/scripts.js', 'www/js/app.js','www/js/*/*.*.js'],
                 tasks: ['ngAnnotate'],
                 options: {
-                    livereload: true,
+                    livereload: true
+                }
+            },
+            html : {
+                files: ['www/**/*.html'],
+                options: {
+                    livereload: true
                 }
             }
 
@@ -37,7 +43,7 @@ module.exports = function(grunt) {
             },
             app: {
                 files: {
-                    'html/js/scripts.js': ['html/js/app.js','html/js/*/*.*.js' ]
+                    'www/scripts.js': ['www/js/app.js','www/js/*/*.*.js' ]
                 }
             }
         }

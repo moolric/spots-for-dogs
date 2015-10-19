@@ -1,3 +1,32 @@
+
+// VARIABLES
+@import "bs-variables";
+@import "custom-variables";
+// FONTAWESOME
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
 // BOOTSTRAP
 @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-sprockets";
 @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+// ANIMATIONS
+@import "mixins.scss";
+@import "animate.scss";
+@import "transitions.scss";
+
+
+// BOOTSTRAP STYLE OVERRIDES
+@import "bs-navbar";
+@import "bs-buttons";
+@import "bs-forms";
+
+// CUSTOM STYLES
+
+@import "page-index";
+@import "template-home";
+@import "template-spots";
+@import "partial-slide-out";
+@import "partial-map";
+
+
+

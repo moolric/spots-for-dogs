@@ -16,6 +16,7 @@ zed::*
 *.csv
 /sublime-gulp.log
 /npm-debug.log
+data/
 
 platforms/platforms.json
 
@@ -29,4 +30,7 @@ platforms/ios/Q-XRay/*
 !platforms/ios/Q-XRay/config.xml
 /changelog.txt
 
+# ignore compiled files
 
+www/css/*
+www/scripts.js

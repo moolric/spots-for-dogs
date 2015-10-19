@@ -1,0 +1,12 @@
+.btn {
+    border-radius:0 !important;
+}
+
+.btn-appointment {
+    @extend .btn-primary;
+    font-weight:bold;
+}
+form .btn-appointment {
+    @extend .btn-lg;
+    width:100%;
+}
